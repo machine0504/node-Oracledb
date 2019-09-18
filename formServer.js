@@ -25,7 +25,11 @@ var server = http.createServer(function (request, response) {
                     console.error(err.message);
                     return;
                 }
+                //查询某表十条数据测试，注意替换你的表名
+                //   var addSe='insert into gis_guanai(g_monitor,g_assister) values (?,?)'
+                //   var addData=[params.g_monitor,params.g_assister]
                 //var sql='select * from test'
+                //'insert into gis_guanai(g_monitor,g_assister) values (袁飞,缪代旭)',
                 connection.execute("INSERT INTO GIS_GUANAI(G_MONITOR,G_ASSISTER) VALUES ('"+a.monitor[0]+"','"+a.assister[0]+"')",
                     function (err, result) {
                         if (err) {
